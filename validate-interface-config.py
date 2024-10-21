@@ -24,7 +24,7 @@ def validate_interface_config(interfaces):
                     print(f"[-] The interface {interface} is configured with a higher MTU (>1300).");
                 else:
                     continue;
-            if re.search(r"auto-negotiation (up|down)", line):
+            if re.search(r"auto-negotiation (on|off)", line):
                 interface_state = re.search(r"auto-negotiation (up|down)", line).group(1);
                 if "on" in interface_administrative_state:
                     continue;
