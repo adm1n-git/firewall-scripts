@@ -11,7 +11,7 @@ def main():
             print(f"\n{ip.strip()}:\n");
             try:
                 with ConnectHandler(**device_details) as conn:
-                    print(conn.send_command(sys.argv[1].strip()));
+                    print(conn.send_command(sys.argv[1].strip(), read_timeout=20.0));
             except NetmikoTimeoutException:
                 print(f"[-] Device \"{ip.strip()}\" is down.");
 

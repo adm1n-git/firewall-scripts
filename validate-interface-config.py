@@ -26,7 +26,7 @@ def main():
 
             if re.search(r"mtu (\d+)", line):
                 interface_mtu = int(re.search(r"mtu (\d+)", line).group(1));
-                if interface_mtu != 1300:
+                if interface_mtu != 1492:
                     print(f"[-] The interface {interface} is configured with a higher MTU (>1300).");
                 else:
                     continue;
